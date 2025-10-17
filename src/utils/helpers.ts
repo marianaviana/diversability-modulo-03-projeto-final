@@ -21,6 +21,7 @@ export class Helpers {
   }
 
   static showNotification(message: string, type: 'success' | 'error' = 'success'): void {
+    // Remover notificações existentes
     const existingNotifications = document.querySelectorAll('.notification');
     existingNotifications.forEach(notification => notification.remove());
 
@@ -43,6 +44,7 @@ export class Helpers {
       ${type === 'success' ? 'background: #51cf66;' : 'background: #ff6b6b;'}
     `;
 
+    // Adicionar animação CSS
     const style = document.createElement('style');
     style.textContent = `
       @keyframes slideIn {
@@ -66,14 +68,20 @@ export class Helpers {
     }, 3000);
   }
 
+  // Debounce corrigido para ambiente de navegador
   static debounce<T extends (...args: any[]) => void>(
     func: T,
     delay: number
   ): (...args: Parameters<T>) => void {
-    let timeoutId: NodeJS.Timeout;
+    let timeoutId: any = null;
     return (...args: Parameters<T>) => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => func.apply(null, args), delay);
+      if (timeoutId !== null) {
+        clearTimeout(timeoutId);
+      }
+      timeoutId = setTimeout(() => {
+        func.apply(null, args);
+        timeoutId = null;
+      }, delay);
     };
   }
 
@@ -85,6 +93,14 @@ export class Helpers {
   }
 
   static generateProductId(): number {
-    return Math.floor(Math.random() * 100000) + 1000;
+    return Date.now() + Math.floor(Math.random() * 1000);
+  }
+
+  static isObjectEmpty(obj: Record<string, any>): boolean {
+    return Object.keys(obj).length === 0;
+  }
+
+  static generateUniqueId(): string {
+    return `id_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
   }
 }

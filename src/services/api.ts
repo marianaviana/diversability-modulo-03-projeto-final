@@ -71,7 +71,6 @@ export class ApiService {
   async getProducts(): Promise<Product[]> {
     try {
       const apiProducts = await this.request<Product[]>('/products');
-
       const managedProducts = this.getManagedProducts().filter(p => !p._isDeleted);
 
       const combinedProducts = apiProducts

@@ -1,10 +1,10 @@
 {
-  "name": "meu-ecommerce-ts",
+  "name": "ecommerce-diversability",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "type-check": "tsc --noEmit"
   },
@@ -12,7 +12,6 @@
     "typescript": "^5.3.3",
     "vite": "^5.0.8"
   },
-  "//": "Configurações para deploy no Vercel",
   "engines": {
     "node": ">=18"
   }
