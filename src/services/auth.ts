@@ -1,5 +1,4 @@
 import { User } from '../types';
-import { Helpers } from '../utils/helpers';
 
 export class AuthService {
   private readonly currentUserKey = 'currentUser';
