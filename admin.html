@@ -1,83 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin - E-commerce</title>
-  <link rel="stylesheet" href="./css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - E-commerce</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <div id="header"></div>
+    <div id="header"></div>
 
-  <main class="main-content">
-    <section class="admin-section">
-      <div class="container">
-        <div class="admin-header">
-          <h1>Gerenciamento de Produtos</h1>
-          <button id="addProductBtn" class="btn-primary">Adicionar Novo Produto</button>
-        </div>
+    <main class="main-content">
+        <section class="admin-section">
+            <div class="container">
+                <div class="admin-header">
+                    <h1>Gerenciamento de Produtos</h1>
+                    <button id="addProductBtn" class="btn-primary">Adicionar Novo Produto</button>
+                </div>
 
-        <div class="table-container">
-          <table id="productsTable" class="products-table">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Título</th>
-                <th>Preço</th>
-                <th>Categoria</th>
-                <th>Ações</th>
-              </tr>
-            </thead>
-            <tbody id="productsTableBody">
-            </tbody>
-          </table>
-        </div>
-        <div id="loadingMessage" class="loading">Carregando produtos...</div>
-        <div id="errorMessage" class="error-message hidden"></div>
-      </div>
-    </section>
+                <div class="table-container">
+                    <table id="productsTable" class="products-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Título</th>
+                                <th>Preço</th>
+                                <th>Categoria</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productsTableBody">
+                        </tbody>
+                    </table>
+                </div>
+                <div id="loadingMessage" class="loading">Carregando produtos...</div>
+                <div id="errorMessage" class="error-message hidden"></div>
+            </div>
+        </section>
     </div>
 
     <div id="footer"></div>
 
+     Modal de Formulário do Produto -->
     <div id="productFormModal" class="modal hidden">
-      <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <h2 id="modalTitle">Adicionar Produto</h2>
-        <form id="productForm">
-          <input type="hidden" id="productId">
-          <div class="form-group">
-            <label for="productTitle">Título</label>
-            <input type="text" id="productTitle" name="title" required>
-          </div>
-          <div class="form-group">
-            <label for="productPrice">Preço</label>
-            <input type="number" id="productPrice" name="price" step="0.01" min="0" required>
-          </div>
-          <div class="form-group">
-            <label for="productDescription">Descrição</label>
-            <textarea id="productDescription" name="description" rows="4" required></textarea>
-          </div>
-          <div class="form-group">
-            <label for="productCategory">Categoria</label>
-            <input type="text" id="productCategory" name="category" required>
-          </div>
-          <div class="form-group">
-            <label for="productImage">URL da Imagem</label>
-            <input type="url" id="productImage" name="image" required>
-          </div>
-          <div class="form-actions">
-            <button type="button" class="btn-secondary" id="cancelBtn">Cancelar</button>
-            <button type="submit" class="btn-primary">Salvar</button>
-          </div>
-        </form>
-      </div>
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modalTitle">Adicionar Produto</h2>
+            <form id="productForm">
+                <input type="hidden" id="productId">
+                <div class="form-group">
+                    <label for="productTitle">Título</label>
+                    <input type="text" id="productTitle" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Preço</label>
+                    <input type="number" id="productPrice" name="price" step="0.01" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Descrição</label>
+                    <textarea id="productDescription" name="description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="productCategory">Categoria</label>
+                    <input type="text" id="productCategory" name="category" required>
+                </div>
+                <div class="form-group">
+                    <label for="productImage">URL da Imagem</label>
+                    <input type="url" id="productImage" name="image" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="cancelBtn">Cancelar</button>
+                    <button type="submit" class="btn-primary">Salvar</button>
+                </div>
+            </form>
+        </div>
     </div>
 
-    <script type="module" src="./src/pages/admin.ts"></script>
+    <script type="module" src="/src/pages/admin.ts"></script>
 </body>
-
 </html>

@@ -1,47 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - E-commerce</title>
-  <link rel="stylesheet" href="./css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - E-commerce</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <div id="header"></div>
+    <div id="header"></div>
 
-  <main class="main-content">
-    <section class="hero-section">
-      <div class="container">
-        <h1>Bem-vindo à nossa Loja</h1>
-        <p>Encontre os melhores produtos com os melhores preços</p>
-      </div>
-    </section>
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="container">
+                <h1>Bem-vindo à nossa Loja</h1>
+                <p>Encontre os melhores produtos com os melhores preços</p>
+            </div>
+        </section>
 
-    <section class="products-section">
-      <div class="container">
-        <h2>Nossos Produtos</h2>
-        <div id="productsGrid" class="products-grid">
-        </div>
-        <div id="loadingMessage" class="loading">Carregando produtos...</div>
-        <div id="errorMessage" class="error-message hidden"></div>
-      </div>
-    </section>
+        <section class="products-section">
+            <div class="container">
+                <h2>Nossos Produtos</h2>
+                <div id="productsGrid" class="products-grid">
+                </div>
+                <div id="loadingMessage" class="loading">Carregando produtos...</div>
+                <div id="errorMessage" class="error-message hidden"></div>
+            </div>
+        </section>
     </div>
 
     <div id="footer"></div>
 
     <div id="productModal" class="modal hidden">
-      <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <div id="modalContent">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalContent">
+            </div>
         </div>
-      </div>
     </div>
 
-    <script type="module" src="./src/pages/home.ts"></script>
+    <script type="module" src="/src/pages/home.ts"></script>
 </body>
-
 </html>
