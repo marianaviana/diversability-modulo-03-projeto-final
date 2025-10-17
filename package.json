@@ -1,12 +1,13 @@
 {
-  "name": "diversability-modulo-03-projeto-final",
+  "name": "meu-ecommerce-ts",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "vercel-build": "npm run build"
   },
   "devDependencies": {
     "typescript": "^5.3.3",
